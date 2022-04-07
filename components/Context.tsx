@@ -26,8 +26,6 @@ const ThemeProvider: FC = (props) => {
         toggleMobileMenu,
     };
 
-    console.log(api);
-
     return <ThemeContext.Provider value={api}>{props.children}</ThemeContext.Provider>;
 };
 

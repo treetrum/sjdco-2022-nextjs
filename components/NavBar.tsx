@@ -27,7 +27,6 @@ export const NavBar = () => {
                             style={{ background: "none", border: 0 }}
                             type="button"
                             onClick={() => {
-                                console.log("Running");
                                 toggleMobileMenu();
                             }}
                             className={`animated-hamburger ${mobileMenuOpen ? "active" : ""}`}

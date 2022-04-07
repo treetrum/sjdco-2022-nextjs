@@ -21,7 +21,7 @@ const HeroHome: FC<{ title: string; content: ReactNode; ctaLabel: string }> = (p
                 <h1 className="site-title">{props.title}</h1>
                 <div className="subtitle">{props.content}</div>
                 <p className="buttons">
-                    <Link href={"/"}>
+                    <Link href={"/about"}>
                         <a className="button-green">{props.ctaLabel}</a>
                     </Link>
                 </p>
