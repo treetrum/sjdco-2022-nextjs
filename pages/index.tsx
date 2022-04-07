@@ -1,9 +1,12 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import { ThemeProvider } from "../components/Context";
 import HeroHome from "../components/HeroHome";
+import { MobileMenu } from "../components/MobileMenu";
+import { NavBar } from "../components/NavBar";
 
 const Home: NextPage = () => (
-    <>
+    <ThemeProvider>
         <Head>
             <title>Sam Davis - Front End Developer</title>
             <meta
@@ -12,6 +15,9 @@ const Home: NextPage = () => (
             />
             <link rel="icon" href="/favicon.png" />
         </Head>
+
+        <NavBar />
+        <MobileMenu />
 
         <HeroHome
             title="Sam Davis"
@@ -23,7 +29,7 @@ const Home: NextPage = () => (
                 </p>
             }
         />
-    </>
+    </ThemeProvider>
 );
 
 export default Home;
