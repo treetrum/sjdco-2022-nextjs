@@ -1,0 +1,196 @@
+.project-slideover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        background-color: rgba(black, 0.66);
+    }
+
+    &__main {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        max-width: 512px;
+        background-color: white;
+        height: 100%;
+        box-shadow: 0 0 50px rgba(black, 0.2);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    &__thumb {
+        position: relative;
+        padding-bottom: 110%;
+        background-size: cover;
+        background-position: center;
+
+        .gatsby-image-wrapper {
+            position: absolute !important;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__content {
+        padding: 40px 30px;
+    }
+
+    &__title {
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+
+    &__back {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        z-index: 1;
+        color: white;
+        transform: translateZ(0);
+
+        background-color: rgba(black, 0.5);
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        border-radius: 50px;
+        border: 2px solid white;
+        transition: 200ms ease all;
+        cursor: pointer;
+
+        &:hover {
+            color: $green;
+        }
+    }
+
+    &__tags {
+        margin-top: 24px;
+        // border-top: 1px solid hsl(0, 0, 90%);
+        // padding-top: 24px;
+
+        $gap: 5px;
+
+        &__title {
+            display: none;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        &__list {
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: (-$gap);
+            margin-right: (-$gap);
+        }
+
+        &__tag {
+            background-color: hsl(0, 0, 95%);
+            color: $background;
+            padding: 7px 10px;
+            margin: $gap;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 1px solid hsl(0, 0, 90%);
+            border-radius: 3px;
+            font-weight: 600;
+        }
+    }
+
+    @include breakpoint(md) {
+        &__content {
+            padding: 50px;
+        }
+
+        &__back {
+            top: 0;
+            left: 0;
+            padding: 32px;
+            border-radius: 0;
+            border: 0;
+            background-color: transparent;
+            font-size: 32px;
+            width: auto;
+            height: auto;
+
+            &:hover {
+                transform: translateX(-5px) translateZ(0);
+            }
+        }
+
+        &__title {
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+    }
+}
+
+.slideover {
+    $easing: cubic-bezier(0.77, 0, 0.175, 1);
+    $duration: 500ms;
+    &-enter {
+        .project-slideover {
+            &__back,
+            &__overlay {
+                transition: $duration $easing all;
+                opacity: 0;
+            }
+            &__main {
+                transition: $duration $easing all;
+                transform: translateX(100%);
+            }
+        }
+        &-done,
+        &-active {
+            .project-slideover {
+                &__back,
+                &__overlay {
+                    opacity: 1;
+                }
+                &__main {
+                    transform: translateX(0%);
+                }
+            }
+        }
+    }
+    &-exit {
+        .project-slideover {
+            &__back,
+            &__overlay {
+                transition: $duration $easing all;
+                opacity: 1;
+            }
+            &__main {
+                transition: $duration $easing all;
+                transform: translateX(0%);
+            }
+        }
+        &-done,
+        &-active {
+            .project-slideover {
+                &__back,
+                &__overlay {
+                    opacity: 0;
+                }
+                &__main {
+                    transform: translateX(100%);
+                }
+            }
+        }
+    }
+}
