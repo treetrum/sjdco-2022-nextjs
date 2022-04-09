@@ -1,0 +1,24 @@
+{
+  "id": "6623c535-a817-4f3a-b440-dc422bfde08e",
+  "uid": "veniam-ut-ea",
+  "type": "project",
+  "data": {
+    "thumbnail": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1589321578146-4c1ba445cc88?w=900&h=500&fit=crop"
+    },
+    "shortDescription": "whiteboard innovative convergence",
+    "description": [
+      {
+        "type": "paragraph",
+        "text": "Aliqua labore dolore ut velit. Nostrud veniam consequat quis non ullamco ipsum laboris et consequat amet non.",
+        "spans": []
+      }
+    ]
+  }
+}

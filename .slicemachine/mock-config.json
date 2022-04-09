@@ -1,0 +1,24 @@
+{
+  "_cts": {
+    "home-page": {
+      "subtitle": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
+    },
+    "project": {},
+    "about-page": {
+      "content": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
+    }
+  },
+  "slices": {
+    "TestSlice": {}
+  }
+}
