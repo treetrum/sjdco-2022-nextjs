@@ -4,7 +4,7 @@ import HeroHome from "../components/HeroHome";
 import { PageBase } from "../components/PageBase";
 
 const Home: NextPage = () => (
-    <PageBase>
+    <>
         <Head>
             <title>Sam Davis - Front End Developer</title>
             <meta
@@ -24,7 +24,7 @@ const Home: NextPage = () => (
                 </p>
             }
         />
-    </PageBase>
+    </>
 );
 
 export default Home;
