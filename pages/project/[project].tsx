@@ -10,6 +10,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
     return {
         paths: projects.map((p) => `/project/${[p.uid]}`),
-        fallback: true,
+        fallback: false,
     };
 };
