@@ -4,6 +4,7 @@ import { lighten, darken } from "polished";
 import * as Colors from "../constants/Colors";
 import Container from "./atoms/Container";
 import { ParallaxIcons } from "./ParallaxIcons";
+import { useWindowHeight } from "../utils/useWindowHeight";
 
 const Outer = styled.header`
     display: flex;
@@ -27,11 +28,14 @@ const Title = styled.h1`
 interface PropsType {
     title: string;
     align?: "left" | "center" | "right";
+    fullHeight?: boolean;
 }
 
-export const HeroPage: React.FC<PropsType> = ({ title, align }) => {
+export const HeroPage: React.FC<PropsType> = ({ title, align, fullHeight = false }) => {
+    const windowHeight = useWindowHeight();
+
     return (
-        <Outer>
+        <Outer style={fullHeight ? { height: windowHeight ? `${windowHeight}px` : "100vh" } : undefined}>
             <ParallaxIcons />
             <Container>
                 <Title style={{ textAlign: align }}>{title}</Title>
