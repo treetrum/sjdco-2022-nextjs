@@ -10,15 +10,9 @@ export const NavLinks = () => {
             type: "internal",
         },
         {
-            title: "About Me / Contact",
+            title: "About / Contact",
             url: "/about",
             type: "internal",
-        },
-        {
-            title: "Development Blog",
-            url: "https://mutableconstant.com",
-            target: "_blank",
-            type: "external",
         },
     ];
     return (

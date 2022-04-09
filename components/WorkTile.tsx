@@ -109,16 +109,6 @@ interface WorkTileProps {
 }
 
 export const WorkTile: React.FC<WorkTileProps> = (props) => {
-    const imgSrc = asImageSrc(props.image);
-
-    useEffect(() => {
-        console.log({ imgSrc });
-    }, [imgSrc]);
-
-    if (!imgSrc) {
-        return null;
-    }
-
     return (
         <Container
             onClick={(event) => {
@@ -126,7 +116,7 @@ export const WorkTile: React.FC<WorkTileProps> = (props) => {
                 props.onClick();
             }}
         >
-            <Image alt="" layout="responsive" src={imgSrc} width={450} height={500} />
+            <Image alt="" layout="responsive" src={asImageSrc(props.image) ?? ""} width={450} height={500} />
             <Content>
                 <Title>{props.title}</Title>
                 <Subtitle>{props.subtitle}</Subtitle>

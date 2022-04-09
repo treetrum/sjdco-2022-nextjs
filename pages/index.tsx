@@ -7,20 +7,25 @@ import { PrismicRichText } from "@prismicio/react";
 import { GetStaticProps } from "next";
 import { ProjectDocument } from "../interfaces/Project";
 import MyWork from "../components/MyWork";
+import { useEffect } from "react";
 
 interface Props {
     page: PrismicDocument;
     projects: ProjectDocument[];
+    initialProject: ProjectDocument | null;
 }
 
-export const getStaticProps: GetStaticProps<Props> = async ({ previewData }) => {
+export const getStaticProps: GetStaticProps<Props> = async ({ previewData, params }) => {
     const client = createClient({ previewData });
     const page = await client.getSingle("home-page");
     const projects = await client.getAllByType<ProjectDocument>("project");
-    return { props: { page, projects } };
+
+    const projectFromURL = projects.find((p) => p.uid === params?.project);
+
+    return { props: { page, projects, initialProject: projectFromURL ?? null } };
 };
 
-const Home: NextPage<Props> = ({ page, projects }) => {
+const Home: NextPage<Props> = ({ page, projects, initialProject }) => {
     return (
         <>
             <Head>
@@ -39,7 +44,7 @@ const Home: NextPage<Props> = ({ page, projects }) => {
                 anchorLabel={page.data.workAnchorText}
             />
 
-            <MyWork projects={projects} />
+            <MyWork projects={projects} initialProject={initialProject} />
         </>
     );
 };

@@ -5,6 +5,8 @@ import { PrismicProvider } from "@prismicio/react";
 import { PrismicPreview } from "@prismicio/next";
 import { linkResolver, repositoryName } from "../prismicio";
 import Link from "next/link";
+import NextNProgress from "nextjs-progressbar";
+import { Colors } from "../constants/Colors";
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
@@ -16,6 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 </Link>
             )}
         >
+            <NextNProgress color={Colors.green} />
             <PageBase>
                 <PrismicPreview repositoryName={repositoryName}>
                     <Component {...pageProps} />

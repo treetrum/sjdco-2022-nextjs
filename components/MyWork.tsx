@@ -1,28 +1,24 @@
-import * as React from "react";
+import React, { useEffect } from "react";
 import { CSSTransition } from "react-transition-group";
 import { ProjectSlideover } from "./ProjectSlideover";
 import { WorkTile } from "./WorkTile";
-import { PrismicDocument } from "@prismicio/types";
-import { Project } from "../interfaces/Project";
+import { Project, ProjectDocument } from "../interfaces/Project";
 
-const MyWork: React.FC<{ projects: PrismicDocument<Project>[] }> = (props) => {
+interface Props {
+    projects: ProjectDocument[];
+    initialProject: ProjectDocument | null;
+}
+
+const MyWork: React.FC<Props> = (props) => {
     // Get all the projects from the query above
     const allProjects = props.projects;
     const projects = allProjects;
 
-    const projectFromURL = allProjects.find((p) =>
-        typeof window !== "undefined"
-            ? p.data.uid ===
-              window.location.pathname
-                  .split("/")
-                  .filter((a) => !!a)
-                  .pop()
-            : undefined
+    const [activeProject, _setActiveProject] = React.useState<undefined | ProjectDocument>(
+        props.initialProject ?? undefined
     );
 
-    const [activeProject, _setActiveProject] = React.useState<undefined | PrismicDocument<Project>>(projectFromURL);
-
-    const setActiveProject = (project: PrismicDocument<Project> | undefined) => {
+    const setActiveProject = (project: ProjectDocument | undefined) => {
         if (project) {
             window.history.pushState({ project }, "", `/project/${project.uid}`);
         } else {

@@ -6,3 +6,14 @@ export const lightBackground = "#303240";
 export const text = "#333333";
 export const white = "#fff";
 export const black = "#000";
+
+export const Colors = {
+    purple,
+    blue,
+    green,
+    background,
+    lightBackground,
+    text,
+    white,
+    black,
+};

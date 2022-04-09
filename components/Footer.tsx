@@ -40,9 +40,11 @@ const Footer = () => {
             <FooterPrimary>
                 <Container>
                     <Logo>
-                        <Link passHref href="/">
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img src={SDLogo.src} alt="Sam Davis Logo" />
+                        <Link href="/">
+                            <a>
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img src={SDLogo.src} alt="Sam Davis Logo" />
+                            </a>
                         </Link>
                     </Logo>
                     <SocialLinks links={Config.socialLinks} />

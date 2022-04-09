@@ -13,9 +13,11 @@ export const NavBar = () => {
             <div className="container">
                 <div className="navbar-items">
                     <div className="navbar-item logo">
-                        <Link passHref href="/">
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img src={logo.src} alt="" />
+                        <Link href="/">
+                            <a>
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img src={logo.src} alt="" />
+                            </a>
                         </Link>
                     </div>
                     <nav className="navbar-item menu">
