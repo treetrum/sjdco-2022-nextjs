@@ -4,16 +4,17 @@ import { HeroPage } from "../components/HeroPage";
 import { createClient } from "../prismicio";
 import { PrismicDocument } from "@prismicio/types";
 import { PrismicRichText } from "@prismicio/react";
+import { GetStaticProps } from "next";
 
 interface Props {
     page: PrismicDocument;
 }
 
-export async function getStaticProps({ previewData }: { previewData: any }): Promise<{ props: Props }> {
+export const getStaticProps: GetStaticProps<Props> = async ({ previewData }) => {
     const client = createClient({ previewData });
     const page = await client.getSingle("about-page");
     return { props: { page } };
-}
+};
 
 const About: NextPage<Props> = ({ page }) => (
     <>
