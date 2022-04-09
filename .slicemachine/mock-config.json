@@ -8,14 +8,7 @@
         }
       }
     },
-    "project": {
-      "description": {
-        "config": {
-          "patternType": "PARAGRAPH",
-          "blocks": 1
-        }
-      }
-    },
+    "project": {},
     "about-page": {
       "content": {
         "config": {

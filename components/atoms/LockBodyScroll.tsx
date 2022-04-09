@@ -1,30 +1,20 @@
-import * as React from "react";
+import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
+import React, { FC, RefObject } from "react";
 
-let scrollDistance = 0;
-
-const LockBodyScroll: React.FC = () => {
+const LockBodyScroll: FC<{ scrollingRef: RefObject<HTMLElement> }> = ({ scrollingRef }) => {
     React.useEffect(() => {
-        if (typeof window !== `undefined`) {
-            const { body } = document;
-
-            scrollDistance = window.scrollY;
-            requestAnimationFrame(() => {
-                body.classList.add("noscroll");
-                body.style.top = `-${scrollDistance}px`;
-            });
-
-            return () => {
-                requestAnimationFrame(() => {
-                    body.classList.remove("noscroll");
-                    body.style.top = "";
-                    if (scrollDistance) {
-                        window.scroll({ top: scrollDistance });
-                        scrollDistance = 0;
-                    }
-                });
-            };
+        const ref = scrollingRef.current;
+        if (ref) {
+            disableBodyScroll(ref);
         }
-    }, []);
+
+        return () => {
+            if (ref) {
+                enableBodyScroll(ref);
+            }
+        };
+    }, [scrollingRef]);
+
     return null;
 };
 

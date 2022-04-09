@@ -17,36 +17,24 @@
     }
 
     &__projects {
-        $gutter: 10px;
-        display: flex;
+        display: grid;
         flex-wrap: wrap;
-        margin-left: -$gutter;
-        margin-right: -$gutter;
-
-        &__single {
-            padding: 0 $gutter ($gutter * 2);
-            margin-bottom: 10px;
-            width: (100%)/1;
-        }
+        gap: 10px;
+        grid-template-columns: repeat(1, 1fr);
     }
 
     @include breakpoint(sm) {
         &__intro .section-title {
             margin-bottom: 96px;
         }
-        &__projects {
-            &__single {
-                width: (100%)/2;
-                margin-bottom: 0;
-            }
+        .my-work__projects {
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 
-    @include breakpoint(lg) {
-        &__projects {
-            &__single {
-                width: (100%)/3;
-            }
+    @include breakpoint(md) {
+        .my-work__projects {
+            grid-template-columns: repeat(3, 1fr);
         }
     }
 }

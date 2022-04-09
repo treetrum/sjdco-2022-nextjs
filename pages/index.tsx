@@ -1,26 +1,26 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { useEffect } from "react";
 import HeroHome from "../components/HeroHome";
 import { createClient } from "../prismicio";
 import { PrismicDocument } from "@prismicio/types";
 import { PrismicRichText } from "@prismicio/react";
 import { GetStaticProps } from "next";
+import { ProjectDocument } from "../interfaces/Project";
+import MyWork from "../components/MyWork";
 
 interface Props {
     page: PrismicDocument;
+    projects: ProjectDocument[];
 }
 
 export const getStaticProps: GetStaticProps<Props> = async ({ previewData }) => {
     const client = createClient({ previewData });
     const page = await client.getSingle("home-page");
-    return { props: { page } };
+    const projects = await client.getAllByType<ProjectDocument>("project");
+    return { props: { page, projects } };
 };
 
-const Home: NextPage<Props> = ({ page }) => {
-    useEffect(() => {
-        console.log(page);
-    });
+const Home: NextPage<Props> = ({ page, projects }) => {
     return (
         <>
             <Head>
@@ -38,6 +38,8 @@ const Home: NextPage<Props> = ({ page }) => {
                 content={<PrismicRichText field={page.data.subtitle} />}
                 anchorLabel={page.data.workAnchorText}
             />
+
+            <MyWork projects={projects} />
         </>
     );
 };
