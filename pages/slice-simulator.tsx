@@ -8,6 +8,7 @@ const SliceSimulatorPage = () => {
     return (
         <SliceSimulator
             sliceZone={({ slices }) => <SliceZone slices={slices} components={components} />}
+            // @ts-ignore
             state={state}
         />
     );
