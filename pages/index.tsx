@@ -36,6 +36,7 @@ const Home: NextPage<Props> = ({ page }) => {
                 title={page.data.title}
                 ctaLabel={page.data.ctaText}
                 content={<PrismicRichText field={page.data.subtitle} />}
+                anchorLabel={page.data.workAnchorText}
             />
         </>
     );

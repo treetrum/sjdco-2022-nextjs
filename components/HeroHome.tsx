@@ -5,7 +5,14 @@ import { useWindowHeight } from "../utils/useWindowHeight";
 import { ParallaxIcons } from "./ParallaxIcons";
 import { ParallaxLetters } from "./ParallaxLetters";
 
-const HeroHome: FC<{ title: string; content: ReactNode; ctaLabel: string }> = (props) => {
+interface Props {
+    title: string;
+    content: ReactNode;
+    ctaLabel: string;
+    anchorLabel: string;
+}
+
+const HeroHome: FC<Props> = (props) => {
     const minHeight = useWindowHeight();
 
     return (
@@ -27,7 +34,7 @@ const HeroHome: FC<{ title: string; content: ReactNode; ctaLabel: string }> = (p
                 </p>
             </div>
             <div className="more-link">
-                <a href="#my-work">Some of my work</a>
+                <a href="#my-work">{props.anchorLabel}</a>
             </div>
         </header>
     );

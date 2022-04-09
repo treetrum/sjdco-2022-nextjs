@@ -27,6 +27,13 @@
           "label": "Cta Text",
           "placeholder": ""
         }
+      },
+      "workAnchorText": {
+        "type": "Text",
+        "config": {
+          "label": "Work Anchor Text",
+          "placeholder": ""
+        }
       }
     }
   }

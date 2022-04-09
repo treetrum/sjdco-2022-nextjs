@@ -1,0 +1,65 @@
+{
+  "id": "5cc64b8d-390e-495d-99bf-af1d59619b8a",
+  "uid": "dolores-eos-illum",
+  "type": "settings",
+  "data": {
+    "title": "exploit mission-critical communities",
+    "copyright": "evolve open-source synergies",
+    "socialLinks": [
+      {
+        "github": {
+          "link_type": "Web",
+          "url": "http://twitter.com"
+        },
+        "twitter": {
+          "link_type": "Web",
+          "url": "http://twitter.com"
+        },
+        "instagram": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
+        },
+        "linkedin": {
+          "link_type": "Web",
+          "url": "https://prismic.io"
+        }
+      },
+      {
+        "github": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
+        },
+        "twitter": {
+          "link_type": "Web",
+          "url": "http://twitter.com"
+        },
+        "instagram": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
+        },
+        "linkedin": {
+          "link_type": "Web",
+          "url": "https://prismic.io"
+        }
+      },
+      {
+        "github": {
+          "link_type": "Web",
+          "url": "http://twitter.com"
+        },
+        "twitter": {
+          "link_type": "Web",
+          "url": "http://twitter.com"
+        },
+        "instagram": {
+          "link_type": "Web",
+          "url": "http://twitter.com"
+        },
+        "linkedin": {
+          "link_type": "Web",
+          "url": "https://prismic.io"
+        }
+      }
+    ]
+  }
+}
