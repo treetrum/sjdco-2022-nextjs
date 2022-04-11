@@ -22,6 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             <Head>
                 <meta name="viewport" content="width=device-width, viewport-fit=cover" />
                 <link rel="icon" href="/favicon.png" />
+                <link rel="apple-touch-icon" href="/favicon.png" />
             </Head>
             <NextNProgress color={Colors.green} />
             <PageBase>
