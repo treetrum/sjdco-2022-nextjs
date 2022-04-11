@@ -17,9 +17,20 @@ const Container = styled.a`
     transition: 500ms ease all;
     position: relative;
     cursor: pointer;
+    position: relative;
+    padding-bottom: 110%;
 
     &:hover {
         box-shadow: 0 10px 20px ${rgba("black", 0.2)};
+    }
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 `;
 
@@ -115,7 +126,7 @@ export const WorkTile: React.FC<WorkTileProps> = (props) => {
                 props.onClick();
             }}
         >
-            <Image alt="" layout="responsive" src={asImageSrc(props.image) ?? ""} width={450} height={500} />
+            <Image alt="" layout="raw" src={asImageSrc(props.image) ?? ""} width={450} height={500} />
             <Content isTouch={isTouch}>
                 <Title>{props.title}</Title>
                 <Subtitle>{props.subtitle}</Subtitle>
