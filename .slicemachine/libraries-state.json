@@ -1,6 +1,50 @@
 {
   "slices": {
     "components": {
+      "project_tags_slice": {
+        "library": "slices",
+        "id": "project_tags_slice",
+        "name": "ProjectTagsSlice",
+        "description": "ProjectTagsSlice",
+        "model": {
+          "id": "project_tags_slice",
+          "type": "SharedSlice",
+          "name": "ProjectTagsSlice",
+          "description": "ProjectTagsSlice",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "ProjectTagsSlice",
+              "primary": {},
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "project_tags_slice",
+            "items": [],
+            "primary": {}
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "/Users/sam/Developer/sjdco-2022-nextjs/.slicemachine/assets/slices/ProjectTagsSlice/default/preview.png",
+            "width": 800,
+            "height": 79
+          }
+        }
+      },
       "test_slice": {
         "library": "slices",
         "id": "test_slice",

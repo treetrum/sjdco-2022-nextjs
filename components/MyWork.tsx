@@ -13,6 +13,7 @@ const MyWork: React.FC<Props> = (props) => {
     // Get all the projects from the query above
     const allProjects = props.projects;
     const projects = allProjects;
+    // .sort((a, b) => a.data.sortOrder - b.data.sortOrder);
 
     const [activeProject, _setActiveProject] = React.useState<undefined | ProjectDocument>(
         props.initialProject ?? undefined

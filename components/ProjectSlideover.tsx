@@ -51,6 +51,18 @@ export const ProjectSlideover: React.FC<Props> = (props) => {
                     <div className="rte">
                         <PrismicRichText field={project.data.description} />
                     </div>
+                    <div className="project-slideover__tags">
+                        <div className="project-slideover__tags__list">
+                            {project.data.tags
+                                .split(",")
+                                .map((tag) => tag.trim())
+                                .map((tag) => (
+                                    <span key={tag} className="project-slideover__tags__tag">
+                                        {tag}
+                                    </span>
+                                ))}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,9 +1,9 @@
 {
-  "id": "4317e514-cf2b-4174-9c23-38e395df6d02",
-  "uid": "culpa-aut-quia",
+  "id": "9a1c0a5d-4d99-4882-811e-036b2e285f98",
+  "uid": "aut-voluptate-hic",
   "type": "project",
   "data": {
-    "title": "facilitate real-time infomediaries",
+    "title": "embrace distributed niches",
     "thumbnail": {
       "dimensions": {
         "width": 900,
@@ -11,15 +11,17 @@
       },
       "alt": "Placeholder image",
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=900&h=500&fit=crop"
+      "url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43?w=900&h=500&fit=crop"
     },
-    "shortDescription": "facilitate robust bandwidth",
+    "shortDescription": "benchmark robust e-tailers",
     "description": [
       {
         "type": "paragraph",
-        "text": "Veniam eu dolor exercitation sunt dolor. Enim in laborum dolor nisi pariatur nisi proident culpa fugiat officia laborum magna do culpa mollit. Dolor mollit tempor deserunt deserunt aliquip officia irure eu non et esse aliquip.",
+        "text": "Nisi eiusmod culpa Lorem eu nisi consequat do officia nulla. Amet tempor sint cupidatat aliquip exercitation mollit dolor ut.",
         "spans": []
       }
-    ]
+    ],
+    "tags": "syndicate clicks-and-mortar niches",
+    "sortOrder": 9001
   }
 }

@@ -18,10 +18,13 @@ interface Props {
 export const getStaticProps: GetStaticProps<Props> = async ({ previewData, params }) => {
     const client = createClient({ previewData });
     const page = await client.getSingle("home-page");
-    const projects = await client.getAllByType<ProjectDocument>("project");
-
+    const projects = await client.getAllByType<ProjectDocument>("project", {
+        orderings: {
+            field: "my.project.sortOrder",
+            direction: "asc",
+        },
+    });
     const projectFromURL = projects.find((p) => p.uid === params?.project);
-
     return { props: { page, projects, initialProject: projectFromURL ?? null } };
 };
 

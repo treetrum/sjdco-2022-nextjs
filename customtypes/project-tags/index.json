@@ -1,0 +1,17 @@
+{
+  "id": "project-tags",
+  "label": "Project Tags",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "Title": {
+        "type": "Text",
+        "config": {
+          "label": "Title",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}

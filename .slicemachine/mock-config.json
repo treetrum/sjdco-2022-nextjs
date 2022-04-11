@@ -24,9 +24,15 @@
         }
       }
     },
-    "settings": {}
+    "project-tags": {}
   },
   "slices": {
-    "TestSlice": {}
+    "TestSlice": {},
+    "ProjectTagsSlice": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
+    }
   }
 }
