@@ -34,7 +34,6 @@ const Home: NextPage<Props> = ({ page, projects, initialProject }) => {
                     name="description"
                     content="Sam Davis - Sydney based frontend developer based out of Sydney, Australia"
                 />
-                <link rel="icon" href="/favicon.png" />
             </Head>
 
             <HeroHome

@@ -1,12 +1,4 @@
 .hero-home {
-    @extend %coverImage;
-
-    display: flex;
-    position: relative;
-    align-items: center;
-    background-image: radial-gradient(lighten($background, 2.5%), darken($background, 2.5%));
-    overflow: hidden;
-
     .parallax-letters {
         @include show-for(md);
         @include absolutelyFull;

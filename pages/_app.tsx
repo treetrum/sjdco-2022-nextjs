@@ -7,6 +7,7 @@ import { linkResolver, repositoryName } from "../prismicio";
 import Link from "next/link";
 import NextNProgress from "nextjs-progressbar";
 import { Colors } from "../constants/Colors";
+import Head from "next/head";
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
@@ -18,6 +19,10 @@ function MyApp({ Component, pageProps }: AppProps) {
                 </Link>
             )}
         >
+            <Head>
+                <meta name="viewport" content="width=device-width, viewport-fit=cover" />
+                <link rel="icon" href="/favicon.png" />
+            </Head>
             <NextNProgress color={Colors.green} />
             <PageBase>
                 <PrismicPreview repositoryName={repositoryName}>

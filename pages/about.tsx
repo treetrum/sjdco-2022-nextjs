@@ -24,7 +24,6 @@ const About: NextPage<Props> = ({ page }) => (
                 name="description"
                 content="Sam Davis - Sydney based frontend developer based out of Sydney, Australia"
             />
-            <link rel="icon" href="/favicon.png" />
         </Head>
 
         <HeroPage title={page.data.title} />

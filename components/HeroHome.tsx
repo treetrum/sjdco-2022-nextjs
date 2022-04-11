@@ -1,5 +1,8 @@
 import Link from "next/link";
+import { darken, lighten } from "polished";
 import React, { FC, ReactNode } from "react";
+import styled from "styled-components";
+import { Colors } from "../constants/Colors";
 
 import { useWindowHeight } from "../utils/useWindowHeight";
 import { ParallaxIcons } from "./ParallaxIcons";
@@ -12,16 +15,23 @@ interface Props {
     anchorLabel: string;
 }
 
-const HeroHome: FC<Props> = (props) => {
-    const minHeight = useWindowHeight();
+const Header = styled.header`
+    --safe-bottom: env(safe-area-inset-bottom);
 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    position: relative;
+    align-items: center;
+    background-image: radial-gradient(${lighten(0.025, Colors.background)}, ${darken(0.025, Colors.background)});
+    overflow: hidden;
+    min-height: calc(100vh - var(--safe-bottom));
+    min-height: -webkit-fill-available;
+`;
+
+const HeroHome: FC<Props> = (props) => {
     return (
-        <header
-            className="hero-home"
-            style={{
-                minHeight: minHeight ? `${minHeight}px` : `100vh`,
-            }}
-        >
+        <Header className="hero-home">
             <ParallaxIcons />
             <ParallaxLetters />
             <div className="container">
@@ -36,7 +46,7 @@ const HeroHome: FC<Props> = (props) => {
             <div className="more-link">
                 <a href="#my-work">{props.anchorLabel}</a>
             </div>
-        </header>
+        </Header>
     );
 };
 

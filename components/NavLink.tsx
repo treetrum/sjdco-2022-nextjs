@@ -1,5 +1,6 @@
 import Link from "next/link";
 import * as React from "react";
+import { useAppContext } from "./Context";
 
 export interface LinkType {
     title: string;
@@ -9,14 +10,20 @@ export interface LinkType {
 }
 
 const NavLink: React.FC<{ link: LinkType }> = (props) => {
+    const { toggleMobileMenu } = useAppContext();
+
+    const closeMobileMenu = () => toggleMobileMenu(false);
+
     const link =
         props.link.type === "external" ? (
-            <a target={props.link.target} href={props.link.url}>
+            <a target={props.link.target} href={props.link.url} onClick={closeMobileMenu}>
                 {props.link.title}
             </a>
         ) : (
             <Link href={props.link.url}>
-                <a target={props.link.target}>{props.link.title}</a>
+                <a target={props.link.target} onClick={closeMobileMenu}>
+                    {props.link.title}
+                </a>
             </Link>
         );
 
