@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { rgba } from "polished";
 import * as Colors from "../constants/Colors";
 import * as Queries from "../constants/MediaQueries";
 import Image from "next/image";
-import { isTouch } from "../utils/isTouch";
+import { useIsTouch } from "../utils/isTouch";
 import { asImageSrc } from "@prismicio/helpers";
 
 const Container = styled.a`
@@ -23,7 +23,7 @@ const Container = styled.a`
     }
 `;
 
-const Content = styled.div`
+const Content = styled.div<{ isTouch: boolean }>`
     background-color: ${rgba(Colors.background, 0.75)};
     color: white;
     padding: 20px 25px;
@@ -42,10 +42,20 @@ const Content = styled.div`
         transform: none;
     }
 
-    ${() =>
-        isTouch && {
-            transform: "none",
-        }}
+    ${({ isTouch }) =>
+        isTouch &&
+        css`
+            transform: none;
+
+            ${Title} {
+                transform: none;
+                opacity: 1;
+            }
+            ${Subtitle} {
+                transform: none;
+                opacity: 1;
+            }
+        `}
 
     ${Queries.md} {
         padding: 25px 30px;
@@ -64,12 +74,6 @@ const Title = styled.h4`
         opacity: 1;
         transform: none;
     }
-
-    ${() =>
-        isTouch && {
-            transform: "none",
-            opacity: 1,
-        }}
 
     ${Queries.md} {
         font-size: 22px;
@@ -90,12 +94,6 @@ const Subtitle = styled.p`
         transform: none;
     }
 
-    ${() =>
-        isTouch && {
-            transform: "none",
-            opacity: 1,
-        }}
-
     ${Queries.md} {
         font-size: 16px;
     }
@@ -109,6 +107,7 @@ interface WorkTileProps {
 }
 
 export const WorkTile: React.FC<WorkTileProps> = (props) => {
+    const isTouch = useIsTouch();
     return (
         <Container
             onClick={(event) => {
@@ -117,7 +116,7 @@ export const WorkTile: React.FC<WorkTileProps> = (props) => {
             }}
         >
             <Image alt="" layout="responsive" src={asImageSrc(props.image) ?? ""} width={450} height={500} />
-            <Content>
+            <Content isTouch={isTouch}>
                 <Title>{props.title}</Title>
                 <Subtitle>{props.subtitle}</Subtitle>
             </Content>

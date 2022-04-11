@@ -24,7 +24,7 @@ const FooterSecondary = styled.footer`
 `;
 
 const Logo = styled.div`
-    height: 100px;
+    height: 75px;
     margin-bottom: 24px;
 
     img {

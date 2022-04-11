@@ -6,12 +6,14 @@ import { isTouch } from "./isTouch";
  * is only calculated one, on desktop this is calculated on window.resize
  */
 export const useWindowHeight = () => {
-    const [height, setHeight] = useState<number | null>(typeof window !== "undefined" ? window.innerHeight : null);
+    const [height, setHeight] = useState<number | null>();
+
     useEffect(() => {
         const handleWindowResize = () => {
             setHeight(window.innerHeight);
         };
         if (!isTouch) {
+            window.requestAnimationFrame(handleWindowResize);
             window.addEventListener("resize", handleWindowResize);
         }
         return () => {
@@ -20,5 +22,6 @@ export const useWindowHeight = () => {
             }
         };
     }, []);
+
     return height;
 };
