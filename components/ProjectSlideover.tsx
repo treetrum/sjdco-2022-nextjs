@@ -4,7 +4,7 @@ import LockBodyScroll from "./atoms/LockBodyScroll";
 import Image from "next/image";
 import { asImageSrc } from "@prismicio/helpers";
 import { PrismicRichText } from "@prismicio/react";
-import { ProjectDocument } from "../interfaces/Project";
+import { ProjectDocument } from "../.slicemachine/prismicio";
 
 interface Props {
     project: ProjectDocument;
@@ -53,7 +53,7 @@ export const ProjectSlideover: React.FC<Props> = (props) => {
                     </div>
                     <div className="project-slideover__tags">
                         <div className="project-slideover__tags__list">
-                            {project.data.tags
+                            {(project.data.tags ?? "")
                                 .split(",")
                                 .map((tag) => tag.trim())
                                 .map((tag) => (

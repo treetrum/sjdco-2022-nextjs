@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { CSSTransition } from "react-transition-group";
+import { ProjectDocument } from "../.slicemachine/prismicio";
 import { ProjectSlideover } from "./ProjectSlideover";
 import { WorkTile } from "./WorkTile";
-import { Project, ProjectDocument } from "../interfaces/Project";
 
 interface Props {
     projects: ProjectDocument[];
@@ -54,9 +54,9 @@ const MyWork: React.FC<Props> = (props) => {
                             return (
                                 <WorkTile
                                     key={project.uid}
-                                    title={project.data.title}
+                                    title={project.data.title ?? ""}
                                     image={project.data.thumbnail}
-                                    subtitle={project.data.shortDescription}
+                                    subtitle={project.data.shortDescription ?? ""}
                                     onClick={() => {
                                         setActiveProject(project);
                                     }}
