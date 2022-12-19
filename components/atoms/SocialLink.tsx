@@ -6,7 +6,9 @@ import * as Colors from "../../constants/Colors";
 export interface LinkProps {
     [key: string]: any;
     icon: string;
+    iconSvg?: React.ReactElement;
     link: string;
+    rel?: string;
 }
 
 const ListItem = styled.li`
@@ -22,19 +24,24 @@ const ListItem = styled.li`
         &:hover {
             opacity: 1;
         }
+
+        img,
+        svg {
+            display: block;
+        }
     }
 `;
 
-const SocialLink: React.FC<LinkProps> = ({ icon, link, ...props }) => {
+const SocialLink: React.FC<LinkProps> = ({ icon, link, rel = "", iconSvg, ...props }) => {
+    const relEls = ["noreferrer", "noopener"];
+    if (rel) {
+        relEls.push(rel);
+    }
     return (
         <ListItem {...props}>
-            <a
-                aria-label={icon}
-                href={link}
-                target="_blank"
-                rel="noreferrer noopener"
-            >
-                <i className={`icon icon-${icon}`} />
+            {/* eslint-disable-next-line react/jsx-no-target-blank */}
+            <a aria-label={icon} href={link} target="_blank" rel={relEls.join(" ")}>
+                {iconSvg ? iconSvg : <i className={`icon icon-${icon}`} />}
             </a>
         </ListItem>
     );

@@ -18,7 +18,7 @@ const SocialLinks: React.FC<SocialLinksProps> = (props) => {
     return (
         <Outer>
             {props.links.map((link) => (
-                <SocialLink link={link.link} icon={link.icon} key={link.link}></SocialLink>
+                <SocialLink {...link} key={link.link} />
             ))}
         </Outer>
     );
