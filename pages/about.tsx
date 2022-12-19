@@ -5,9 +5,10 @@ import { createClient } from "../prismicio";
 import { PrismicDocument } from "@prismicio/types";
 import { PrismicRichText } from "@prismicio/react";
 import { GetStaticProps } from "next";
+import { AboutPageDocument } from "../.slicemachine/prismicio";
 
 interface Props {
-    page: PrismicDocument;
+    page: AboutPageDocument<string>;
 }
 
 export const getStaticProps: GetStaticProps<Props> = async ({ previewData }) => {
@@ -26,7 +27,7 @@ const About: NextPage<Props> = ({ page }) => (
             />
         </Head>
 
-        <HeroPage title={page.data.title} />
+        <HeroPage title={page.data.title ?? ""} />
 
         <div className="page-content">
             <div className="container">

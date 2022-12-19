@@ -5,9 +5,9 @@ import { createClient } from "../prismicio";
 import { PrismicDocument } from "@prismicio/types";
 import { PrismicRichText } from "@prismicio/react";
 import { GetStaticProps } from "next";
-import { ProjectDocument } from "../interfaces/Project";
 import MyWork from "../components/MyWork";
 import { useEffect } from "react";
+import { ProjectDocument } from "../.slicemachine/prismicio";
 
 interface Props {
     page: PrismicDocument;
@@ -18,7 +18,7 @@ interface Props {
 export const getStaticProps: GetStaticProps<Props> = async ({ previewData, params }) => {
     const client = createClient({ previewData });
     const page = await client.getSingle("home-page");
-    const projects = await client.getAllByType<ProjectDocument>("project", {
+    const projects = await client.getAllByType("project", {
         orderings: {
             field: "my.project.sortOrder",
             direction: "asc",

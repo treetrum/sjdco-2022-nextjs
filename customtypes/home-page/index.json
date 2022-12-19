@@ -24,7 +24,7 @@
       "ctaText": {
         "type": "Text",
         "config": {
-          "label": "Cta Text",
+          "label": "CTA Text",
           "placeholder": ""
         }
       },

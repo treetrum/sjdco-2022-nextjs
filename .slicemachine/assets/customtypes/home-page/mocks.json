@@ -1,17 +1,25 @@
 {
-  "id": "99414b9b-1a13-428f-8bdd-e148dc6ccece",
-  "uid": "repudiandae-ea-molestiae",
+  "id": "mock-doc-id",
+  "url": null,
   "type": "home-page",
+  "href": null,
+  "tags": [],
+  "first_publication_date": "1970-01-01T00:00:01+0000",
+  "last_publication_date": "1970-01-01T00:00:01+0000",
+  "slugs": [],
+  "linked_documents": [],
+  "lang": "en-us",
+  "alternate_languages": [],
   "data": {
-    "title": "streamline revolutionary architectures",
+    "title": "become",
     "subtitle": [
       {
         "type": "paragraph",
-        "text": "Veniam nulla in laborum commodo labore exercitation in do aute adipisicing.",
+        "text": "Quis magna laborum minim in anim velit. Magna officia adipisicing duis aute magna ipsum. Nostrud tempor cillum laborum dolor nostrud Lorem.",
         "spans": []
       }
     ],
-    "ctaText": "unleash viral deliverables",
-    "workAnchorText": "embrace world-class experiences"
+    "ctaText": "sheet",
+    "workAnchorText": "late"
   }
 }

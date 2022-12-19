@@ -1,27 +1,36 @@
 {
-  "id": "9a1c0a5d-4d99-4882-811e-036b2e285f98",
-  "uid": "aut-voluptate-hic",
+  "id": "mock-doc-id",
+  "url": null,
   "type": "project",
+  "href": null,
+  "tags": [],
+  "first_publication_date": "1970-01-01T00:00:01+0000",
+  "last_publication_date": "1970-01-01T00:00:01+0000",
+  "slugs": [],
+  "linked_documents": [],
+  "lang": "en-us",
+  "alternate_languages": [],
   "data": {
-    "title": "embrace distributed niches",
+    "title": "just",
     "thumbnail": {
       "dimensions": {
         "width": 900,
         "height": 500
       },
-      "alt": "Placeholder image",
+      "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43?w=900&h=500&fit=crop"
+      "url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468"
     },
-    "shortDescription": "benchmark robust e-tailers",
+    "shortDescription": "movement",
     "description": [
       {
         "type": "paragraph",
-        "text": "Nisi eiusmod culpa Lorem eu nisi consequat do officia nulla. Amet tempor sint cupidatat aliquip exercitation mollit dolor ut.",
+        "text": "Est cupidatat duis do mollit elit minim aute eiusmod pariatur irure deserunt sint duis. Duis sint quis Lorem ex. Deserunt ipsum sit mollit cupidatat voluptate nulla incididunt consectetur.",
         "spans": []
       }
     ],
-    "tags": "syndicate clicks-and-mortar niches",
-    "sortOrder": 9001
+    "tags": "copy",
+    "sortOrder": 23,
+    "slices": []
   }
 }
