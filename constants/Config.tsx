@@ -13,7 +13,7 @@ const config = {
         {
             icon: "mastodon",
             iconSvg: <MastodonIcon />,
-            link: "https://mstdn.social/@treetrum",
+            link: "https://mastodon.social/@treetrum",
             rel: "me",
         },
         {
